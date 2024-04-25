@@ -43,7 +43,7 @@ stacksize 6291456
 flush
 auth strong
 
-users pnteam:CL:pnteam@@2024
+users pnteam:CL:pnteam2024
 allow pnteam
 
 $(awk -F "/" '{print "proxy -6 -n -a -p" $4 " -i" $3 " -e"$5"\n" \
@@ -61,7 +61,7 @@ EOF
 
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo "pnteam/pnteam@@2024/$IP4/$port/$(gen64 $IP6)"
+        echo "pnteam/pnteam2024/$IP4/$port/$(gen64 $IP6)"
     done
 }
 
